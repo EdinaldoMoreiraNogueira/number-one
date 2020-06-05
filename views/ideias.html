@@ -1,0 +1,72 @@
+!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  
+  <title>Ideias - Brincadeiras Criativa</title>
+  <link rel="stylesheet" href="/style.css">
+  <link rel="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;1,500;1,600;1,700;1,800&display=swap"  href="rel="stylesheet>
+
+</head>
+<body id="page-ideas">
+
+  <div id="container">
+
+  <header>
+    <li><a href="/">
+      <img src="/logo.png" alt="Imagem da Logomarca">
+
+    </a></li>
+
+    <nav>
+     <li><a href="/">Inicio</a></li>
+     <li><a class="button" href="#" onclick="onOff()">Nova Bricadeira</a></li>
+ 
+    </nav> 
+ 
+   </header>
+ 
+   <section id="title">
+     <p>EM EXIBIÇÃO</p>
+     <h1>Brincadeiras</h1> 
+   </section>
+    
+   <main>
+
+     <section id="ideas">
+ 
+      {% for idea in ideas %}
+
+      <div class="idea">
+        <img src="{{idea.imag}}" alt="Imagem de {{idea.title}}">
+         <div class="content">
+ 
+           <h3> {{idea.title}} </h3>
+           <p>{{idea.category}}</p>
+            <div class="description">
+              {{idea.description}} </div>
+
+            <a href="{{idea.link}}" target="_blank">Ir para a Brincadeira</a>
+         </div>
+ 
+         </div>
+      {% endfor %}
+ 
+     </section>
+   
+   </main>  
+   <footer>
+   Com ♥️ <a href= "https://www.tempojunto.com/" target="blank">tempojunto</a>
+   </footer>
+
+  </div>
+
+  {% include "modal.html"%}
+   
+ 
+ <script src="/scripts.js"></script>
+ 
+
+  
+</body>
+</html>
